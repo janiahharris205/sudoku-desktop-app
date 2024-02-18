@@ -12,8 +12,7 @@ import userInterface.UserInterfaceImpl;
  * @author JaNiah Harris
  * Email: janiah.harris205@gmail.com
  * Last updated: February 18, 2024 
- * Description: The Cipher Program is an application designed to encrypt and decrypt text 
- * messages using substitution ciphers, offering both Shift and Vigenere ciphers.
+ * Description: The Program is a Sudoku desktop application
  */
 public class App extends Application {
     
