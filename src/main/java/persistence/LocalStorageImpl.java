@@ -12,6 +12,7 @@ import problemdomain.IStorage;
 /**
  *
  * @author JaNiah Harris
+ * provides functionality for storing and retrieving Sudoku game data locally on the user's system
  */
 public class LocalStorageImpl implements IStorage {
 
@@ -23,13 +24,15 @@ public class LocalStorageImpl implements IStorage {
                 fileName + ".txt" // Adjusted the file name
         );
     }
-    //public LocalStorageImpl() {
-    
-    //private static File GAME_DATA = new File(
-            //System.getProperty("user.home"),
-            //"gamedata.txt"
-   // );
+//    public LocalStorageImpl() {
+//    
+//    private static File GAME_DATA = new File(
+//            System.getProperty("user.home"),
+//            "gamedata.txt"
+//    );
 
+    //overrides the method from the IStorage interface to update the game data. 
+    //it writes the provided SudokuGame object to the GAME_DATA file using object serialization
     @Override
     public void updateGameData(SudokuGame game) throws IOException {
         try {
@@ -43,6 +46,7 @@ public class LocalStorageImpl implements IStorage {
         }
     }
 
+    //overrides the method from the IStorage interface to retrieve the game data
     @Override
     public SudokuGame getGameData() throws IOException {
         try {

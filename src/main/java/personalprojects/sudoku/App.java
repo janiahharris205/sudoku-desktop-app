@@ -11,8 +11,8 @@ import userInterface.UserInterfaceImpl;
 /**
  * @author JaNiah Harris
  * Email: janiah.harris205@gmail.com
- * Last updated: February 18, 2024 
- * Description: The Program is a Sudoku desktop application
+ * Last updated: February 25, 2024 
+ * Description: This Program is a Sudoku desktop application
  */
 public class App extends Application {
     

@@ -6,8 +6,13 @@ import static problemdomain.SudokuGame.GRID_BOUNDARY;
 /**
  *
  * @author JaNiah Harris
+ * method for determining whether a sudoku puzzle is solvable
  */
 public class SudokuSolver {
+    
+    //takes an array representing a Sudoku puzzle as input and attempts to solve it. 
+    //It iterates through empty cells in the puzzle, trying different values 
+    //for each cell until a solution is found or until all possibilities are exhausted
     public static boolean puzzleIsSolvable(int[][] puzzle) {
         Coordinates[] emptyCells = typeWriterEnumerate(puzzle);
         int index = 0;
@@ -47,7 +52,10 @@ public class SudokuSolver {
 
         return false;
     }
-private static Coordinates[] typeWriterEnumerate(int[][] puzzle) {
+    
+    //iterates through the puzzle grid and identifies empty cells (cells with a value of 0). 
+    //It returns an array of Coordinates representing the positions of empty cells
+    private static Coordinates[] typeWriterEnumerate(int[][] puzzle) {
         Coordinates[] emptyCells = new Coordinates[40];
         int iterator = 0;
         for (int y = 0; y < GRID_BOUNDARY; y++) {

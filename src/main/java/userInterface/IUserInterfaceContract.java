@@ -5,6 +5,8 @@ import problemdomain.SudokuGame;
 /**
  *
  * @author JaNiah Harris
+ * represents the event listener interface, which defines methods that handle 
+ * user interactions or events within the Sudoku game interface
  */
 public interface IUserInterfaceContract {
     interface EventListener {

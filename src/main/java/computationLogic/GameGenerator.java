@@ -9,6 +9,7 @@ import static problemdomain.SudokuGame.GRID_BOUNDARY;
 /**
  *
  * @author JaNiah Harris
+ * Contains methods for generating new sudoku game grids
  */
 class GameGenerator {
     public static int[][] getNewGameGrid() {

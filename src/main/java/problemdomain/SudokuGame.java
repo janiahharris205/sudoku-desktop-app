@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  *
  * @author JaNiah Harris
+ * represents a sudoku game
  */
 public class SudokuGame implements Serializable {
     private final GameState gameState; //inum that represents different states of a game

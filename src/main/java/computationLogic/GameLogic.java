@@ -14,6 +14,7 @@ import static problemdomain.SudokuGame.GRID_BOUNDARY;
 /**
  *
  * @author JaNiah Harris
+ * static methods to manage game logic
  */
 public class GameLogic {
     public static SudokuGame getNewGame() {
@@ -23,12 +24,14 @@ public class GameLogic {
         );
     }
     
+    //determines the state of the game based on the provided grid
     public static GameState checkForCompletion(int[][] grid) {
         if (sudokuIsInvalid(grid)) return GameState.ACTIVE;
         if (tilesAreNotFilled(grid)) return GameState.ACTIVE;
         return GameState.COMPLETE;
     }
     
+    //checks if there are any unfilled tiles (represented by 0)
     public static boolean tilesAreNotFilled(int[][] grid) {
         for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
             for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
@@ -38,6 +41,7 @@ public class GameLogic {
         return false;
     }
     
+    //checks if the Sudoku grid is invalid by verifying the validity of rows, columns, and 3x3 subgrids
     public static boolean sudokuIsInvalid(int[][] grid) {
         if (rowsAreInvalid(grid)) return true;
         if (columnsAreInvalid(grid)) return true;
@@ -45,6 +49,7 @@ public class GameLogic {
         else return false;
     }
     
+    //checks the validity of 3x3 subgrids by dividing the grid into rows of squares and validating each row of squares
     public static boolean squaresAreInvalid(int[][] grid) {
         //top three squares
         if (rowOfSquaresIsInvalid(Rows.TOP, grid)) return true;
@@ -58,6 +63,7 @@ public class GameLogic {
         return false;
     }
     
+    //method validates a row of squares within a 3x3 subgrid
     private static boolean rowOfSquaresIsInvalid(Rows value, int[][] grid) {
         switch (value) {
             case TOP:
@@ -88,6 +94,7 @@ public class GameLogic {
         }
     }
     
+    //checks if a single square within a 3x3 subgrid is invalid by checking for repeated values
     public static boolean squareIsInvalid(int yIndex, int xIndex, int[][] grid) {
         int yIndexEnd = yIndex + 3;
         int xIndexEnd = xIndex + 3;
@@ -114,6 +121,7 @@ public class GameLogic {
         return false;
     }
     
+    //checks if there are any repeated values in the columns of the Sudoku grid
     public static boolean columnsAreInvalid(int[][] grid) {
         for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
             List<Integer> row = new ArrayList<>();
@@ -127,6 +135,7 @@ public class GameLogic {
         return false;
     }
 
+    //checks if there are any repeated values in the rows of the Sudoku grid
     public static boolean rowsAreInvalid(int[][] grid) {
         for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
             List<Integer> row = new ArrayList<>();
@@ -140,6 +149,7 @@ public class GameLogic {
         return false;
     }
     
+    //checks if a collection of integers contains repeated values
     public static boolean collectionHasRepeats(List<Integer> collection) {
         //count occurrences of integers from 1-GRID_BOUNDARY. If Collections.frequency returns a value greater than 1,
         //then the square is invalid (i.e. a non-zero number has been repeated in a square)

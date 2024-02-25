@@ -11,6 +11,7 @@ import userInterface.IUserInterfaceContract;
 /**
  *
  * @author JaNiah Harris
+ * controller component responsible for handling user inputs and updating the game state
  */
 public class ControlLogic implements IUserInterfaceContract.EventListener{
     private IStorage storage;

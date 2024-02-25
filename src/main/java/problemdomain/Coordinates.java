@@ -5,6 +5,7 @@ import java.util.Objects;
 /**
  *
  * @author JaNiah Harris
+ * represents a pair of x and y coordinates in a two-dimensional space
  */
 public class Coordinates {
     private final int x;

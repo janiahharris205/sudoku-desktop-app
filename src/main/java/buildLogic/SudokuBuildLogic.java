@@ -11,6 +11,13 @@ import userInterface.logic.ControlLogic;
 /**
  *
  * @author JaNiah Harris
+ * This class contains a static method build responsible for initializing the Sudoku game logic and user interface.
+ * It takes an instance of IUserInterfaceContract.View as a parameter. 
+ * The method attempts to retrieve the game state from local storage using a LocalStorageImpl object. 
+ * If no game data is found, it creates a new game state using GameLogic.getNewGame() method and stores it. 
+ * After obtaining the initial game state, it initializes the game's event listener and updates the user 
+ * interface with the initial game state. 
+ * If any I/O exception occurs during this process, it is propagated, marking the application as unrecoverable
  */
 public class SudokuBuildLogic {
     public static void build(IUserInterfaceContract.View userInterface) throws IOException {

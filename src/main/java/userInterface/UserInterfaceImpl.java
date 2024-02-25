@@ -25,6 +25,7 @@ import problemdomain.SudokuGame;
 /**
  *
  * @author JaNiah Harris
+ * represents the GUI
  */
 public final class UserInterfaceImpl implements IUserInterfaceContract.View, 
             EventHandler<KeyEvent> {

@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 /**
  *
  * @author JaNiah Harris
+ * represents a text field component specifically designed for a Sudoku game interface
  */
 public class SudokuTextField extends TextField {
     private final int x;

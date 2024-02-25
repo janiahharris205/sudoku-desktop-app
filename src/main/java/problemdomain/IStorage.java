@@ -10,7 +10,8 @@ import java.io.IOException;
 
 /**
  *
- * @author janiahharris
+ * @author JaNiah Harris
+ * defines the contract for classes responsible for storing and retrieving game data in the application
  */
 public interface IStorage {
     void updateGameData(SudokuGame game) throws IOException;
