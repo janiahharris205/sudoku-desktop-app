@@ -15,7 +15,9 @@ import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import problemdomain.Coordinates;
 import problemdomain.SudokuGame;
@@ -183,7 +185,7 @@ public final class UserInterfaceImpl implements IUserInterfaceContract.View,
         line.setHeight(height);
         line.setWidth(width);
 
-        line.setFill(Color.BLACK);
+        line.setFill(Color.rgb(0, 0, 0));
         return line;
 
     }
@@ -212,13 +214,24 @@ public final class UserInterfaceImpl implements IUserInterfaceContract.View,
         root.getChildren().add(boardBackground);
     }
 
+    
     private void drawTitle(Group root) {
-        Text title = new Text(235, 690, SUDOKU);
+        Text title = new Text(SUDOKU);
         title.setFill(Color.WHITE);
-        Font titleFont = new Font(43);
+        Font titleFont = Font.font("Serif", FontWeight.BOLD, 43);
         title.setFont(titleFont);
+        title.setTextAlignment(TextAlignment.CENTER);
+
+        // Center horizontally
+        double titleWidth = title.getBoundsInLocal().getWidth();
+        double xOffset = (WINDOW_X - titleWidth) / 2;
+        title.setLayoutX(xOffset);
+
+        // Set vertical position
+        title.setLayoutY(690);
+
         root.getChildren().add(title);
-    }
+}
 
     
     
